@@ -6,7 +6,7 @@ import serverRenderer from './renderer.js'
 import path from 'path'
 
 
-const PORT = process.env.PORT || 3003
+const PORT = process.env.PORT || 3993
 
 // initialize the application and create the routes
 const app = express()
