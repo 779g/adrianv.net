@@ -61,9 +61,7 @@ const App = () => {
 
   return (
     <>
-      <h1 className="x-primary c-x">Hello there</h1>
-      <Paginator paginator={{ totalPages: 200, page: 77 }} />
-      <HorizontalBar>iHey</HorizontalBar>
+      <h1 className="x-primary c-x">Bienvenido carnal</h1>
       <FormattedMessage {...messages.unauthorizedContact} />
       <AnimatedVCaret
         active={active}
@@ -71,7 +69,6 @@ const App = () => {
         id="myarrow"
         width="200px"
       />
-      <GraphQLTester />
       <SwitchRouteMap
         routes={routes}
         NotFound={<Redirect to={'404'} />}

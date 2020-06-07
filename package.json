@@ -1,6 +1,6 @@
 {
-  "name": "template-react-ssr",
-  "version": "2.0.5",
+  "name": "adrianv.net",
+  "version": "2.0.6",
   "description": "",
   "main": "public/index.js",
   "engines": {
@@ -18,7 +18,7 @@
     "cps": "npm run client:prod:start",
     "cpc": "npm run client:prod:compile",
     "cpcw": "npm run cpc -- -- --watch",
-    "renderer:start": "nodemon src/ssr/server.gql.js",
+    "renderer:start": "nodemon src/ssr/server.js",
     "renderer:compile": "COMPILE=true webpack --config ./webpack.renderer.js",
     "sitemap:start": "nodemon src/sitemap/server.js",
     "sitemap:compile": "COMPILE=true webpack --config ./webpack.sitemap.js",
@@ -31,7 +31,7 @@
     "deploy-commit": "git add . && git commit -m '[Auto] Compile and deploy from cli' && git push",
     "build:deploy": "npm run build && npm run deploy-commit",
     "bd": "npm run build:deploy",
-    "test-eslint": "eslint src/client.gql.js"
+    "test-eslint": "eslint src/client.js"
   },
   "repository": {
     "type": "git",
@@ -44,9 +44,6 @@
   },
   "homepage": "https://github.com/fwrlines/template-preact-ssr#readme",
   "dependencies": {
-    "@apollo/client": "^3.0.0-rc.2",
-    "@apollo/link-retry": "^2.0.0-beta.3",
-    "@apollo/react-ssr": "^4.0.0-beta.1",
     "@fwrlines/alphabet-scss": "latest",
     "@fwrlines/ds": "latest",
     "@fwrlines/utils": "latest",

@@ -38,7 +38,7 @@ module.exports = {
   },
 
   entry:[
-    path.resolve(path.join(__dirname, 'src/ssr/renderer.gql.js'))
+    path.resolve(path.join(__dirname, 'src/ssr/renderer.js'))
     //path.resolve(path.join(__dirname, 'src/renderer.js'))
   ],
 
