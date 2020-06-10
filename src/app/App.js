@@ -14,8 +14,7 @@ import {
   Paginator,
   HorizontalBar,
   SwitchRouteMap,
-  GraphQLTester,
-  BlockHeader
+  GraphQLTester
 } from '@fwrlines/ds'
 
 /* @fwrlines/generator-react-component 2.2.3 */
@@ -63,23 +62,6 @@ const App = () => {
   return (
     <>
       <h1 className="x-primary c-x">Bienvenido carnal</h1>
-      <BlockHeader
-        className="s2 k-s u2 p-u"
-        headingProps={{
-          heading         :'Hello its me the title',
-          headingAs       :'h1',
-          headingClassName:'s6 k-s'
-        }}
-        figureProps={{
-          src     :'https://images.pexels.com/photos/158251/forest-the-sun-morning-tucholskie-158251.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-          alt     :'Alt text for the image',
-          children:'Caption under the image'
-        }}
-      >
-        <p>
-  Here is a subtitle that explains why the product is worth it. It goes around one sentence and a half. Something sharp probably.
-        </p>
-      </BlockHeader>
       <FormattedMessage {...messages.unauthorizedContact} />
       <AnimatedVCaret
         active={active}
