@@ -160,8 +160,8 @@ module.exports = {
     new LoadablePlugin(),
 
 	 new MiniCssExtractPlugin({
-      filename     :'[name].css?[contenthash:5]',
-      chunkFilename:'[name].css?[contenthash:5]'
+      filename:'main.css?[contenthash:5]'
+      //chunkFilename:'[name].css?[contenthash:5]'
     }),
 
     /*new LodashModuleReplacementPlugin({
