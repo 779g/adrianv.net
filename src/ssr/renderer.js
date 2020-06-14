@@ -9,20 +9,12 @@ import { StaticRouter } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
-import App from 'app/App.js'
+import BaseApp from 'app/BaseApp'
 
 import template from 'assets/html/index.prod.html'
 
 import stats from '../../public/loadable-stats.json'
-
-import { SiteContextProvider } from '@fwrlines/ds'
-
-import { IntlProvider } from 'react-intl'
-
-import localizedMessages from 'translations/it.json'
-
-import siteContextConfig from 'config/siteContext'
-
+  
 /* const statsFile = path.resolve(__dirname, '../dist/loadable-stats.json')
    We create an extractor from the statsFile */
 
@@ -39,7 +31,7 @@ export default async(req, res) => {
       location={req.url}
       context={routerContext}
     >
-	    <App />
+	    <BaseApp />
     </StaticRouter>
   )
 
