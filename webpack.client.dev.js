@@ -49,7 +49,7 @@ module.exports = {
     ],
     watchContentBase  :true,
     historyApiFallback:true,
-    port              :3333,
+    port              :3555,
     host              :'0.0.0.0',
     hot               :true,
     liveReload        :false,

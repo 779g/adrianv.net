@@ -5,39 +5,15 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { loadableReady } from '@loadable/component'
 
-import { SiteContextProvider } from '@fwrlines/ds'
-
-import { IntlProvider } from 'react-intl'
-
-import localizedMessages from 'translations/en.json'
-
-import App from 'app/App'
-
-import siteContextConfig from 'config/siteContext'
-
-
-//import Clock from 'components/Clock'
-
+import BaseApp from 'app/BaseApp'
 
 import '@fwrlines/alphabet-scss/main.scss'
-
-//const isProduction = !(process.env.DEBUG === 'true')
 
 const rootElement = document.getElementById('main')
 
 const jsx = (
   <BrowserRouter>
-    <SiteContextProvider
-      config={siteContextConfig}
-      initialTheme="system"
-    >
-      <IntlProvider
-        locale={'en'}
-        messages={localizedMessages}
-      >
-	        <App />
-      </IntlProvider>
-    </SiteContextProvider>
+	  <BaseApp />
   </BrowserRouter>
 )
 
