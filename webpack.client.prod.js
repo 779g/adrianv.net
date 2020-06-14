@@ -120,9 +120,10 @@ module.exports = {
             }
             return 'ds.main'
           }
-        },
+        }
         
 
+        /*
         vendor:{
           //priority:-10,
           test:/[\\/]node_modules[\\/]/,
@@ -134,7 +135,7 @@ module.exports = {
             // npm package names are URL-safe, but some servers don't like @ symbols
             return `npm.${packageName.replace('@', '')}`
           }
-        }
+        }*/
       }
     }
   },
@@ -159,8 +160,8 @@ module.exports = {
     new LoadablePlugin(),
 
 	 new MiniCssExtractPlugin({
-      filename     :'main.css?[contenthash:5]',
-      chunkFilename:'main.css?[contenthash:5]'
+      filename     :'[name].css?[contenthash:5]',
+      chunkFilename:'[name].css?[contenthash:5]'
     }),
 
     /*new LodashModuleReplacementPlugin({
