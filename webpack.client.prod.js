@@ -72,7 +72,7 @@ module.exports = {
     host              :'0.0.0.0',
     hot               :true,
     liveReload        :false,
-    clientLogLevel    :'debug',
+    clientLogLevel    :'warning',
     disableHostCheck  :true //rdp
   },
 
@@ -100,7 +100,7 @@ module.exports = {
     runtimeChunk:'single',
 
     splitChunks:{
-      chunks            :'all',
+      chunks            :(chunk) => chunk.name !== 'main',
       maxInitialRequests:Infinity,
       minSize           :0,
       cacheGroups       :{

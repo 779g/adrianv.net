@@ -7,7 +7,14 @@ import { loadableReady } from '@loadable/component'
 
 import BaseApp from 'app/BaseApp'
 
-import '@fwrlines/alphabet-scss/main.scss'
+
+import(
+
+  /* webpackPreload:true */
+  /* webpackChunkName:'styles' */
+  '@fwrlines/alphabet-scss/main.scss'
+)
+
 
 const rootElement = document.getElementById('main')
 
