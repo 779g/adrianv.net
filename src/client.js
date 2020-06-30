@@ -15,6 +15,13 @@ import(
   '@fwrlines/alphabet-scss/main.scss'
 )
 
+import(
+
+  /* webpackPreload:true */
+  /* webpackChunkName:'styles' */
+  'styles/local.scss'
+)
+
 
 const rootElement = document.getElementById('main')
 

@@ -15,7 +15,6 @@ export default (props) => (
     config={siteContextConfig}
     initialTheme="system"
   >
-    { 'applying decorators' }
     <IntlProvider
       locale={'en'}
       messages={localizedMessages}

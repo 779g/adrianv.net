@@ -30,6 +30,11 @@
     "defaultMessage": "Unauthorized"
   },
   {
+    "id": "app.common.components.local_breadcrumb.home",
+    "description": "Link to the homepage",
+    "defaultMessage": "Home"
+  },
+  {
     "id": "app.dashboard.navtree.account",
     "description": "Label for account in the navigation sidebar",
     "defaultMessage": "Account Information"
@@ -135,6 +140,357 @@
     "defaultMessage": "Theme"
   },
   {
+    "id": "app.site.oss.subtitle",
+    "description": "OSS Page subtitle paragraph",
+    "defaultMessage": "Most of my work consists in OSS. You will find here the list of the packages I authored, their description, use-case, and their state of development"
+  },
+  {
+    "id": "app.site.oss.title",
+    "description": "OSS Page title",
+    "defaultMessage": "Open Source Software"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.esade.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.esade.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.esade.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.esade.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.esade.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.esade.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.hec.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.hec.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.hec.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.hec.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.hec.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.hec.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.stan.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.stan.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.stan.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.stan.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.stan.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.edu.cards.stan.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.education.subtitle",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "Please find below my education information sorted in antichronological order."
+  },
+  {
+    "id": "app.site.pages.curriculum.education.title",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "Education"
+  },
+  {
+    "id": "app.site.pages.curriculum.education_subtitle",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "Please find below my education information sorted in antichronological order."
+  },
+  {
+    "id": "app.site.pages.curriculum.education_title",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "Education"
+  },
+  {
+    "id": "app.site.pages.curriculum.subtitle",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "Where you will find my education , employment history and the answer to the question \"Why did you become a web developper after studying business ?\""
+  },
+  {
+    "id": "app.site.pages.curriculum.title",
+    "description": "Curriculum Page title",
+    "defaultMessage": "Curriculum"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.consulting.d"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.consulting.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.consulting.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.consulting.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.consulting.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.consulting.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.consulting.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.d"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.decidata.d"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.decidata.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.decidata.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.decidata.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.decidata.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.decidata.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.decidata.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.esade.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.esade.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.esade.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.esade.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.esade.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.esade.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.fwrlines.d"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.fwrlines.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.fwrlines.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.fwrlines.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.fwrlines.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.fwrlines.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.fwrlines.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.hec.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.hec.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.hec.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.hec.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.hec.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.hec.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.mcm.d"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.mcm.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.mcm.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.mcm.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.mcm.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.mcm.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.mcm.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.stan.i1"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.stan.i2"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.stan.i3"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.stan.i4"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.stan.s"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.stan.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.cards.t"
+  },
+  {
+    "id": "app.site.pages.curriculum.work.contact",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "please get in touch with me."
+  },
+  {
+    "id": "app.site.pages.curriculum.work.subtitle",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "If you'd like more information, or get in touch with my references, "
+  },
+  {
+    "id": "app.site.pages.curriculum.work.title",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "Work"
+  },
+  {
+    "id": "app.site.pages.curriculum.work_contact",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "please get in touch with me."
+  },
+  {
+    "id": "app.site.pages.curriculum.work_subtitle",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "If you'd like more information, or get in touch with my references, "
+  },
+  {
+    "id": "app.site.pages.curriculum.work_title",
+    "description": "Curriculum Page subtitle paragraph",
+    "defaultMessage": "Work"
+  },
+  {
+    "id": "app.site.pages.home.subtitle",
+    "description": "Home Page subtitle paragraph",
+    "defaultMessage": "I'm a business graduate, IT consultant, and full-stack web developper."
+  },
+  {
+    "id": "app.site.pages.home.title",
+    "description": "Home Page title",
+    "defaultMessage": "Hello, I'm Adrian."
+  },
+  {
+    "id": "app.site.pages.oss.subtitle",
+    "description": "OSS Page subtitle paragraph",
+    "defaultMessage": "Most of my work consists in OSS. You will find here the list of the packages I authored, their description, use-case, and their state of development"
+  },
+  {
+    "id": "app.site.pages.oss.title",
+    "description": "OSS Page title",
+    "defaultMessage": "Open Source Software"
+  },
+  {
+    "id": "ds.collections.cp.status_bar.connected",
+    "description": "Text if the endpoint is connected",
+    "defaultMessage": "Connected to the GraphQL endpoint at { endpoint }."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.connected_short",
+    "description": "Text if the endpoint is connected",
+    "defaultMessage": "Connected."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.connection_error",
+    "description": "Text if the endpoint is not connected",
+    "defaultMessage": "Error connecting to the endpoint at { endpoint }."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.connection_error_short",
+    "description": "Text if the endpoint is not connected",
+    "defaultMessage": "Connection error."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.loading",
+    "description": "Text to retry connecting.",
+    "defaultMessage": "Testing the API connection at { endpoint }"
+  },
+  {
+    "id": "ds.collections.cp.status_bar.loading_short",
+    "description": "Text to retry connecting.",
+    "defaultMessage": "Connecting..."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.logout",
+    "description": "Text for the logout link.",
+    "defaultMessage": "Logout."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.response_is",
+    "description": "Text if the endpoint is connected",
+    "defaultMessage": "Server answered { response }."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.response_is_short",
+    "description": "Text if the endpoint is connected",
+    "defaultMessage": "{ response }."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.retry",
+    "description": "Text to retry connecting.",
+    "defaultMessage": "Retry."
+  },
+  {
+    "id": "ds.collections.cp.status_bar.update",
+    "description": "Text to retry connecting.",
+    "defaultMessage": "Update."
+  },
+  {
+    "id": "ds.collections.experimental.curriculum.title",
+    "description": "The title of the component",
+    "defaultMessage": "Here are my degrees in antichronological order."
+  },
+  {
     "id": "ds.collections.saas.plan.price.free",
     "description": "Text to display when the price is zero",
     "defaultMessage": "Free"
@@ -148,6 +504,9 @@
     "id": "ds.dashboard.navigation.horizontal_bar.back",
     "description": "Navigation back button",
     "defaultMessage": "Back"
+  },
+  {
+    "id": "ds.messages.title"
   },
   {
     "id": "ds.oauth2.o_login_button.login",
