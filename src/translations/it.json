@@ -130,5 +130,15 @@
   "app.site.pages.curriculum.edu.cards.stan.i3": "",
   "app.site.pages.curriculum.edu.cards.stan.i4": "",
   "app.site.pages.curriculum.edu.cards.stan.s": "",
-  "app.site.pages.curriculum.edu.cards.stan.t": ""
+  "app.site.pages.curriculum.edu.cards.stan.t": "",
+  "app.site.pages.oss.ds.description": "",
+  "app.site.pages.oss.grc.description": "",
+  "app.site.pages.oss.gss.description": "",
+  "app.site.pages.oss.swatch.description": "",
+  "app.site.pages.oss.tgs.description": "",
+  "app.site.pages.oss.trs.description": "",
+  "app.site.pages.oss.helpers.subtitle": "",
+  "app.site.pages.oss.helpers.title": "",
+  "app.site.pages.oss.libs.subtitle": "",
+  "app.site.pages.oss.libs.title": ""
 }

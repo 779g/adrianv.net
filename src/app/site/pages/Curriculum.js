@@ -133,7 +133,7 @@ const content = {
         title    :<FormattedMessage {...messages.eduCardsESADETitle} />,
         subtitle :<FormattedMessage {...messages.eduCardsESADESubtitle} />,
         className:'y-white x-subtitle',
-        id       :'ms-esade',
+        id       :'msesade',
         children :<>
           <p>
             <FormattedMessage {...messages.eduCardsESADEDescription} />
@@ -159,7 +159,7 @@ const content = {
         title    :<FormattedMessage {...messages.eduCardsHECTitle} />,
         subtitle :<FormattedMessage {...messages.eduCardsHECSubtitle} />,
         className:'y-white x-subtitle',
-        id       :'ms-HEC',
+        id       :'mshec',
         children :<>
           <p>
             <FormattedMessage {...messages.eduCardsHECDescription} />
@@ -324,7 +324,7 @@ const content = {
       {
         title    :<FormattedMessage {...messages.workCardsDecidataTitle} />,
         subtitle :<FormattedMessage {...messages.workCardsDecidataSubtitle} />,
-        id       :'work-freelance',
+        id       :'work-decidata',
         className:'y-secondary x-black',
         children :<>
           <p>
@@ -372,12 +372,29 @@ const Curriculum = ({
       <Heading {...content.sectionTitle.headingProps} />
     </Page.Section>
     <Page.Section
+      {...content.sectionWork.sectionProps}
+    >
+    
+      <Heading {...content.sectionWork.headingProps} />
+      <CurriculumComponent
+        toggleStyle="plus"
+        className="s-1 k-s v8 mv-v"
+      >
+        { content.sectionWork.cardMap.map((e, i) =>
+          (<CurriculumComponent.Item
+            key={i}
+            {...e}
+          />)
+        ) }
+      </CurriculumComponent>
+    </Page.Section>
+    <Page.Section
       {...content.sectionEducation.sectionProps}
     >
     
       <Heading {...content.sectionEducation.headingProps} />
       <CurriculumComponent
-        className="s-1 k-s v4 mv-v"
+        className="s-1 k-s v8 mv-v"
       >
         { content.sectionEducation.cardMap.map((e, i) =>
           (<CurriculumComponent.Item
@@ -388,21 +405,11 @@ const Curriculum = ({
       </CurriculumComponent>
     </Page.Section>
     <Page.Section
-      {...content.sectionWork.sectionProps}
+      {...content.sectionEducation.sectionProps}
     >
     
-      <Heading {...content.sectionWork.headingProps} />
-      <CurriculumComponent
-        toggleStyle="plus"
-        className="s-1 k-s v6 mv-v"
-      >
-        { content.sectionWork.cardMap.map((e, i) =>
-          (<CurriculumComponent.Item
-            key={i}
-            {...e}
-          />)
-        ) }
-      </CurriculumComponent>
+      <Heading {...content.sectionEducation.headingProps} />
+      <div className="" />
     </Page.Section>
   </Page>
 )
