@@ -9,8 +9,9 @@ const moduleName = 'app.common'
 
 export default [
   {
-    path     :_u(MODULE_URLS.REDEEM, redeemParam),
-    component:loadable(() => import (/* webpackChunkName: `app.common` */ './components/Redeemer.js'))
+    path     :_u(MODULE_URLS.STATUS_404),
+    component:loadable(() => import (/* webpackChunkName: `app.site` */ './pages/Status404.js')),
+    exact    :true
   }
 
   /*
@@ -22,7 +23,5 @@ export default [
   },
   */
 ]
-
-
 
 

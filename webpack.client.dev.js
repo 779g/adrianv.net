@@ -49,11 +49,11 @@ module.exports = {
     ],
     watchContentBase  :true,
     historyApiFallback:true,
-    port              :3333,
+    port              :3555,
     host              :'0.0.0.0',
     hot               :true,
     liveReload        :false,
-    clientLogLevel    :'debug',
+    clientLogLevel    :'warning',
     disableHostCheck  :true //rdp
   },
 
@@ -105,7 +105,13 @@ module.exports = {
           }, {
             loader:'css-loader'
           }, {
-            loader:'sass-loader'
+            loader :'sass-loader',
+            options:{
+              sourceMap  :true,
+              sassOptions:{
+                includePaths:['./node_modules']
+              }
+            }
           }
         ]
       }

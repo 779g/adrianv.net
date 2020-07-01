@@ -13,11 +13,16 @@ import {
   AnimatedVCaret,
   Paginator,
   HorizontalBar,
+  RedirectWithStatus,
   SwitchRouteMap,
   GraphQLTester
 } from '@fwrlines/ds'
 
+import * as URLS from './urls.js'
+
 /* @fwrlines/generator-react-component 2.2.3 */
+
+/*
 import { defineMessages, FormattedMessage } from 'react-intl'
 
 const messages = defineMessages({
@@ -53,6 +58,35 @@ const messages = defineMessages({
   }
 })
 
+    <FormattedMessage {...messages.unauthorizedContact} />
+*/
+
+const menuItems = [
+  {
+    children:'home',
+    to      :URLS.SITE.HOME
+  },
+  {
+    children:'resources',
+    to      :URLS.ARTICLES.LIST
+  },
+  {
+    children:'oss',
+    to      :URLS.SITE.OSS
+  },
+  {
+    children:'cv',
+    to      :URLS.SITE.CURRICULUM
+  },
+  {
+    children:'testart',
+    to      :'/heyheyihey'
+  },
+  {
+    children:'NF',
+    to      :'/ntfnd'
+  }
+]
 
 import routes from './allRoutes.js'
 
@@ -61,17 +95,22 @@ const App = () => {
 
   return (
     <>
-      <h1 className="x-primary c-x">Bienvenido carnal</h1>
-      <FormattedMessage {...messages.unauthorizedContact} />
-      <AnimatedVCaret
-        active={active}
-        setActive={setActive}
-        id="myarrow"
-        width="200px"
-      />
+      <ul>
+        { menuItems.map((e, i) =>
+          (<li>
+            <Link
+              {...e}
+              key={i}
+            />
+          </li>)
+        ) }
+      </ul>
       <SwitchRouteMap
         routes={routes}
-        NotFound={<Redirect to={'404'} />}
+        NotFound={<RedirectWithStatus
+          status={404}
+          to={'404'}
+                  />}
       />
       {/*}
       <MyProfile />
