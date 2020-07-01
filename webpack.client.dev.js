@@ -39,7 +39,7 @@ module.exports = {
   devtool  :'cheap-module-eval-source-map',
   devServer:{
     contentBase:[
-      path.resolve(__dirname, './public'),
+      //path.resolve(__dirname, './public'),
       path.resolve(__dirname, './src/assets/fonts'),
       path.resolve(__dirname, './src/assets/images'),
       path.resolve(__dirname, './src/assets/favicon'),

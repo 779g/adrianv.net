@@ -48,7 +48,7 @@
   "app.site.oss.subtitle": "Most of my work consists in OSS. You will find here the list of the packages I authored, their description, use-case, and their state of development",
   "app.site.oss.title": "Open Source Software",
   "app.common.components.local_breadcrumb.home": "Home",
-  "app.site.pages.oss.subtitle": "Most of my work consists in OSS. You will find here the list of the packages I authored, their description, use-case, and their state of development",
+  "app.site.pages.oss.subtitle": "You will find here the list of the packages I authored, their description, use-case, and their state of development. Everything is distributed under the MIT license.",
   "app.site.pages.oss.title": "Open Source Software",
   "app.site.pages.home.subtitle": "I'm a business graduate, IT consultant, and full-stack web developper.",
   "app.site.pages.home.title": "Hello, I'm Adrian.",
@@ -130,5 +130,15 @@
   "app.site.pages.curriculum.edu.cards.stan.i3": "",
   "app.site.pages.curriculum.edu.cards.stan.i4": "",
   "app.site.pages.curriculum.edu.cards.stan.s": "",
-  "app.site.pages.curriculum.edu.cards.stan.t": ""
+  "app.site.pages.curriculum.edu.cards.stan.t": "",
+  "app.site.pages.oss.ds.description": "A large component library for react, developped and documented on Storybook, used internally by most of my apps.",
+  "app.site.pages.oss.grc.description": "A quick generator of functional components for React, including common PropTypes, defaultProps, internationalization and local module scss.",
+  "app.site.pages.oss.gss.description": "A quick generator of Storybook v5 stories, compatible with the docs and the PropTypes table, integrates advanced logic such as subcomponents or story decorators.",
+  "app.site.pages.oss.swatch.description": "A color library for the component era, based on css4 vars and the mutator pattern.",
+  "app.site.pages.oss.tgs.description": "A template for an Apollo GraphQL Server running on nodejs, serving to interface Sequelize dabatase models with a public GraphQL schema.",
+  "app.site.pages.oss.trs.description": "A template for a GraphQL / universal React application, to be deployed on Vercel, or be used as an example to build lambda-based infrastructure.",
+  "app.site.pages.oss.helpers.subtitle": "The following packages are helper packages, for instance, templates or generators. They are simple projects I rely on to be more productive, and have at the moment little to no documentation. (This might change in the future.)",
+  "app.site.pages.oss.helpers.title": "Helpers and Tools",
+  "app.site.pages.oss.libs.subtitle": "Production-grade, documented, code libraries for your projects.",
+  "app.site.pages.oss.libs.title": "Libraries"
 }
