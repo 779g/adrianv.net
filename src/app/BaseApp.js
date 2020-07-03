@@ -13,7 +13,7 @@ import siteContextConfig from 'config/siteContext'
 export default (props) => (
   <SiteContextProvider
     config={siteContextConfig}
-    initialTheme="system"
+    initialTheme="dark"
   >
     <IntlProvider
       locale={'en'}

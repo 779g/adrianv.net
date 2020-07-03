@@ -1,0 +1,40 @@
+/* @fwrlines/generator-react-component 2.3.4 */
+
+/*
+
+Classes :
+.nav_bar : default
+
+*/
+
+.nav_bar {
+  padding: .3em;
+  position: sticky;
+  top: 0;
+  transition: all .3s;
+  z-index: 10; //even if 1 or 2 is enough
+
+  &:not(.istop) {
+    box-shadow: var(--shadow);
+  }
+
+  ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    li.item {
+      font-family: var(--fh);
+
+      & + li.item {
+        &::before {
+          content: "\00a0~\00a0";
+          display: inline-block;
+          margin-left: 1em;
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+}

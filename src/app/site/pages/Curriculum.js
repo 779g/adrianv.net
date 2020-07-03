@@ -89,6 +89,7 @@ const content = {
           <FormattedMessage {...messages.title} />
         </LocalBreadcrumb.Item>
       </LocalBreadcrumb>,
+      labelClassName:'simple',
       //labelClassName:'x-red basic',
       //labelAs:'p',
       //labelProps :{},
@@ -132,7 +133,7 @@ const content = {
       {
         title    :<FormattedMessage {...messages.eduCardsESADETitle} />,
         subtitle :<FormattedMessage {...messages.eduCardsESADESubtitle} />,
-        className:'y-white x-subtitle',
+        className:'y-background b-light-y',
         id       :'msesade',
         children :<>
           <p>
@@ -158,7 +159,7 @@ const content = {
       {
         title    :<FormattedMessage {...messages.eduCardsHECTitle} />,
         subtitle :<FormattedMessage {...messages.eduCardsHECSubtitle} />,
-        className:'y-white x-subtitle',
+        className:'y-blue b-y ui-dark',
         id       :'mshec',
         children :<>
           <p>
@@ -185,7 +186,7 @@ const content = {
       {
         title    :<FormattedMessage {...messages.eduCardsStanfordTitle} />,
         subtitle :<FormattedMessage {...messages.eduCardsStanfordSubtitle} />,
-        className:'y-red x-white',
+        className:'y-red b-y ui-dark',
         id       :'sship',
         children :<>
           <p>
@@ -250,7 +251,7 @@ const content = {
         title    :<FormattedMessage {...messages.workCardsMeccamicoTitle} />,
         subtitle :<FormattedMessage {...messages.workCardsMeccamicoSubtitle} />,
         id       :'work-mcm',
-        className:'y-white x-subtitle',
+        className:'y-background b-light-y ui-light',
         children :<>
           <p>
             <FormattedMessage {...messages.workCardsMeccamicoDescription} />
@@ -275,7 +276,7 @@ const content = {
         title    :<FormattedMessage {...messages.workCardsFwrlinesTitle} />,
         subtitle :<FormattedMessage {...messages.workCardsFwrlinesSubtitle} />,
         id       :'work-fwrlines',
-        className:'y-blue x-white',
+        className:'y-blue b-y ui-dark',
         children :<>
           <p>
             <FormattedMessage {...messages.workCardsFwrlinesDescription} />
@@ -300,7 +301,7 @@ const content = {
         title    :<FormattedMessage {...messages.workCardsConsultingTitle} />,
         subtitle :<FormattedMessage {...messages.workCardsConsultingSubtitle} />,
         id       :'work-freelance',
-        className:'y-secondary x-black',
+        className:'y-secondary b-light-y ui-light',
         children :<>
           <p>
             <FormattedMessage {...messages.workCardsConsultingDescription} />
@@ -325,7 +326,7 @@ const content = {
         title    :<FormattedMessage {...messages.workCardsDecidataTitle} />,
         subtitle :<FormattedMessage {...messages.workCardsDecidataSubtitle} />,
         id       :'work-decidata',
-        className:'y-secondary x-black',
+        className:'y-background b-light-y',
         children :<>
           <p>
             <FormattedMessage {...messages.workCardsDecidataDescription} />

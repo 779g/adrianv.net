@@ -1,20 +1,20 @@
 import React, { useState, useContext } from 'react'
 //import Prototypes from 'prototypes' //Capitalize, etc
 import { Switch, Redirect, Route, Link } from 'react-router-dom'
-
+import { ThemeSelector, IconLink } from 'app/common/components'
 //import NotFound from './NotFound.js'
 
+import { NavBar } from 'app/common/components'
 //import oAuth2Routes from './oauth2/routes'
 //import Clock from 'ui/test/AsyncClock'
 //import QueryTester from 'ui/test/QueryTester'
 //import { MyProfile } from 'ui/local/dashboardMain'
 
 import {
-  AnimatedVCaret,
-  Paginator,
-  HorizontalBar,
   RedirectWithStatus,
   SwitchRouteMap,
+  HorizontalBar,
+  SiteContext,
   GraphQLTester
 } from '@fwrlines/ds'
 
@@ -61,50 +61,24 @@ const messages = defineMessages({
     <FormattedMessage {...messages.unauthorizedContact} />
 */
 
-const menuItems = [
-  {
-    children:'home',
-    to      :URLS.SITE.HOME
-  },
-  {
-    children:'resources',
-    to      :URLS.ARTICLES.LIST
-  },
-  {
-    children:'oss',
-    to      :URLS.SITE.OSS
-  },
-  {
-    children:'cv',
-    to      :URLS.SITE.CURRICULUM
-  },
-  {
-    children:'testart',
-    to      :'/heyheyihey'
-  },
-  {
-    children:'NF',
-    to      :'/ntfnd'
-  }
-]
-
 import routes from './allRoutes.js'
 
 const App = () => {
   const [active, setActive] = useState(false)
 
+  const {
+    preferredTheme
+  } = useContext(SiteContext)
+
   return (
-    <>
-      <ul>
-        { menuItems.map((e, i) =>
-          (<li>
-            <Link
-              {...e}
-              key={i}
-            />
-          </li>)
-        ) }
-      </ul>
+    <div className={
+      [
+        'ui-'+preferredTheme,
+        'z-background b-z'
+      ].filter(e => e).join(' ')
+    }
+    >
+      <NavBar></NavBar>
       <SwitchRouteMap
         routes={routes}
         NotFound={<RedirectWithStatus
@@ -135,7 +109,7 @@ Includes
         </ul>
       </nav>
       */}
-    </>
+    </div>
   )
 }
 
