@@ -63,6 +63,7 @@ const LocalCard = ({
   ].reduce((a, e, i) => {
     e[0] && a.push(() => (<a
       href={e[0]}
+      className='cool-link'
       target="_blank"
       rel="noopener noreferrer nofollow"
                           >
@@ -74,6 +75,7 @@ const LocalCard = ({
     if (i-1 >= 0) {
       return (<>
         &nbsp;
+        
         { ' | ' }
 &nbsp;
         <E />
@@ -86,14 +88,13 @@ const LocalCard = ({
   return (
     <IconCard
       svgSprite="/dev.sprite.svg"
-      labelClassName={labelClassName + ' s-3 k-s c-on-x'}
       headingProps={{
         heading       ,
         label           ,
-        labelClassName  :labelClassName + ' s-3 k-s c-on-x',
+        labelClassName  :labelClassName + ' s-3 k-s c-on-x b-dark-x',
         headingAs       :'h3',
-        headingClassName:'s4 k-s c-on-y',
-        children        :<span  className="s-1 k-s">{ linksReduced }</span>
+        headingClassName:'small',
+        children        :<span  className="s-1 k-s c-light-x">{ linksReduced }</span>
 
       /*subtitle        :<a
         href="https://github.com/fwrlines/swatch"
@@ -111,7 +112,6 @@ const LocalCard = ({
     
       {...otherProps}
     >
-      <p />
 
       <div
         className={
@@ -121,7 +121,9 @@ const LocalCard = ({
           ].filter(e => e).join(' ')
         }
       >
+        <span className='x-paragraph c-x'>
         { children }
+        </span>
       </div>
     </IconCard>
   )
@@ -159,7 +161,7 @@ const content = {
           <FormattedMessage {...messages.title} />
         </LocalBreadcrumb.Item>
       </LocalBreadcrumb>,
-      //labelClassName:'x-red basic',
+      labelClassName:'simple',
       //labelAs:'p',
       //labelProps :{},
       //
@@ -204,7 +206,7 @@ const content = {
         svgClassName  :'x-orange c-x',
         className     :'y-background b-light-y x-subtitle',
         label         :'SASS',
-        labelClassName:'x-violet',
+        labelClassName:'x-orange',
         heading       :'Swatch',
         npm           :'@fwrlines/swatch',
         demo          :'https://demo.swatch.fwrlines.com',
@@ -268,7 +270,7 @@ const content = {
     },
     cardMap:[
       {
-        className     :'y-background b-light-y x-subtitle',
+        className     :'y-blue b-y ui-dark',
         label         :'React',
         labelClassName:'x-blue',
         heading       :'template-react-ssr',
@@ -284,7 +286,7 @@ const content = {
       },
 
       {
-        className     :'y-background b-light-y x-subtitle',
+        className     :'y-green b-light-y ui-light',
         label         :'Apollo Server',
         labelClassName:'x-indigo',
         heading       :'template-graphql-server',
@@ -300,7 +302,7 @@ const content = {
       },
 
       {
-        className     :'y-secondary b-y x-subtitle',
+        className     :'y-background b-light-y',
         label         :'Yeoman',
         labelClassName:'x-white',
         heading       :'generator-react-component',
@@ -317,7 +319,7 @@ const content = {
       },
 
       {
-        className     :'y-secondary b-y x-subtitle',
+        className     :'y-background b-light-y',
         label         :'Yeoman',
         labelClassName:'x-white',
         heading       :'generator-storybook-story',
@@ -365,7 +367,7 @@ const OSS = ({
       <Heading {...content.sectionLibraries.headingProps} />
       <div className="mv-v v4">
         <IconCard.Group
-          style={{ '--card-width': '400px' }}
+          style={{ '--card-width': '300px' }}
           className="pv-u"
           grid
         >

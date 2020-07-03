@@ -1,3 +1,81 @@
+@use "@fwrlines/alphabet-scss/scss/defs/fonts";
+
+@import "@fwrlines/alphabet-scss/scss/mixins/reset";
+@import "@fwrlines/alphabet-scss/scss/mixins/form_reset";
+@import "@fwrlines/alphabet-scss/scss/lib/text";
+@import "@fwrlines/alphabet-scss/scss/lib/main.simple";
+@import "@fwrlines/alphabet-scss/scss/lib/animation";
+@import "@fwrlines/alphabet-scss/scss/lib/blocks";
+
+$fontParagraphName:us;
+$fontDefault:$fontParagraphName, "HK Grotesk Pro", "Helvetica Neue", "Verdana", sans-serif;
+
+$fontPRegular:"paragraph";
+$fontPBold:"paragraph.bold";
+
+$fontHeadersName:chicago;
+$fontHeaders:$fontHeadersName, "Helvetica Neue", "Helvetica", "Verdana", "Arial", sans-serif;
+
+//$fontHLight:'headings.light';
+$fontHRegular:"headings";
+$fontHBold:"headings.bold";
+
+$fontWeightHeaders:normal;
+
+//$fontWeightHeaders:bold;
+
+$fontWireframe:"BLOKK";
+//$font-icon-name:"fi" ;
+$font-icon-filename:icon;
+//$font-icon-prefix:"icon";
+
+@charset "UTF-8";
+@include fonts.font-defaults; //fh fp
+@include fonts.font-wireframe; //fw
+@include fonts.import-font($fontParagraphName, $fontPRegular, normal, normal);
+@include fonts.import-font($fontParagraphName, $fontPBold, bold, normal);
+
+//@include fonts.import-font($fontHeadersName, $fontHRegular, lighter, normal);
+@include fonts.import-font($fontHeadersName, $fontHRegular, normal, normal);
+@include fonts.import-font($fontHeadersName, $fontHBold, bold, normal);
+@include fonts.font-icon($name:fi, $filename:"icons", $prefix:icon);
+@include fonts.font-icon($name:cairo, $filename:"cairo", $prefix:cairo, $className:cairo);
+
+
+//@import "@fwrlines/alphabet-scss/scss/lib/form";
+@import "@fwrlines/alphabet-scss/scss/lib/grid";
+@import "@fwrlines/alphabet-scss/scss/lib/img";
+@import "@fwrlines/alphabet-scss/scss/lib/styles";
+
+//@import "@fwrlines/alphabet-scss/scss/lib/colors";
+@import "@fwrlines/alphabet-scss/scss/lib/sizes";
+@import "@fwrlines/swatch"; //Same as "@fwrlines/swatch/main"
+
 #main {
+  --heading-mul: var(--s2);
   font-size: calc(var(--s2) * 1em);
+}
+
+:root {
+  @include fonts.define-variables($headings:$fontHeadersName, $paragraph:$fontParagraphName);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+.fh {
+  letter-spacing: -.05em;
+  line-height: .8em !important;
+  margin-top: .2em;
+}
+
+.cairo.cairo.cairo {
+  line-height: .6em;
 }

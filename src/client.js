@@ -12,13 +12,6 @@ import(
 
   /* webpackPreload:true */
   /* webpackChunkName:'styles' */
-  '@fwrlines/alphabet-scss/main.scss'
-)
-
-import(
-
-  /* webpackPreload:true */
-  /* webpackChunkName:'styles' */
   'styles/local.scss'
 )
 

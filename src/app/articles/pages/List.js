@@ -51,7 +51,7 @@ const mainHeadingProps = {
   //headingProps :{}
 
   label         :'Film',
-  labelClassName:'x-yellow basic',
+  labelClassName:'simple',
   //labelAs:'p',
   //labelProps :{},
   //
