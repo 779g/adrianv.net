@@ -109,13 +109,13 @@ const NavBar = ({
           </li>)
         ) }
         <li>
-          <IconLink to="/contact" >
-      O
+          <IconLink to={ URLS.SITE.CONTACT }>
+      S
           </IconLink>
         </li>
         <li>
-          <IconLink to="/credits" >
-      S
+          <IconLink to={ URLS.SITE.CREDITS } >
+      O
           </IconLink>
         </li>
         <li>

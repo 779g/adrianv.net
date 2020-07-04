@@ -58,6 +58,7 @@ const ThemeSelector = ({
         [
         //styles[baseClassName],
           baseClassName,
+          'pointer',
           className
         ].filter(e => e).join(' ')
       }
@@ -69,7 +70,8 @@ const ThemeSelector = ({
         width={`${Math.pow(1.2, 3)}em`}
         target="kare-bomb"
         sprite="/dev.sprite.svg"
-        className="pointer x-paragraph xh-red c-x"
+        className="pointer x-link xh-red c-x"
+        useClassName='pointer'
         onClick={loopThemes}
       />
       {/* preferredTheme */}

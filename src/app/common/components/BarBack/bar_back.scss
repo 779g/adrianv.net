@@ -1,0 +1,17 @@
+/* @fwrlines/generator-react-component 2.3.4 */
+/*
+
+Classes :
+.bar_back : default
+
+*/
+
+.bar_back{
+  //height:3em;
+  //background:red;
+  z-index:2;
+  display:flex;
+  flex-direction:row;
+  justify-content:end;
+
+}
