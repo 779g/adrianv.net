@@ -104,6 +104,7 @@ module.exports = {
       maxInitialRequests:Infinity,
       minSize           :0,
       cacheGroups       :{
+
         fwrlines:{
           chunks  :'all',
           priority:100,
@@ -116,9 +117,10 @@ module.exports = {
             if ((nameSplit.length - 1) >= (distIndex +3)) {
               const family = nameSplit[distIndex + 2]
               const moduleName = nameSplit[distIndex +3 ]
-              return ['ds', family, pascalToSnake(moduleName)].join('.')
+              //return ['ds', family, pascalToSnake(moduleName)].join('.')
             }
-            return 'ds.main'
+            //return 'ds.main'
+            return 'ds'
           }
         }
         
