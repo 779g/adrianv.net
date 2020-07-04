@@ -9,6 +9,16 @@ const moduleName = 'app.site'
 
 export default [
   {
+    path     :_u(MODULE_URLS.CONTACT),
+    component:loadable(() => import (/* webpackChunkName: `app.site` */ './pages/Contact.js')),
+    exact    :true
+  },
+  {
+    path     :_u(MODULE_URLS.CREDITS),
+    component:loadable(() => import (/* webpackChunkName: `app.site` */ './pages/Credits.js')),
+    exact    :true
+  },
+  {
     path     :_u(MODULE_URLS.CURRICULUM),
     component:loadable(() => import (/* webpackChunkName: `app.site` */ './pages/Curriculum.js')),
     exact    :true

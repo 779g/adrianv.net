@@ -10,7 +10,7 @@ import {
   Heading
 } from '@fwrlines/ds'
 
-import { LocalBreadcrumb } from 'app/common/components'
+import { NavBar, LocalBreadcrumb } from 'app/common/components'
 
 import URLS from '../urls'
 
@@ -67,12 +67,12 @@ const content = {
   sectionTitle:{
     sectionProps:{
       head     :true,
-      className:'ph-u u2 v4 pv-v',
+      className:'ph-u u2 v4 pv-v gt-center',
       id       :'head'
     },
     headingProps:{
       //id,
-      className:'uc',
+      className:'uc gc-column',
       //style,
       //children, //appended at bottom
 
@@ -105,12 +105,12 @@ const content = {
   sectionEducation:{
     sectionProps:{
       //head     :true,
-      className:'ph-u u2 pv-v v4',
+      className:'ph-u u2 pv-v v4 gt-center',
       id       :'education'
     },
     headingProps:{
       //id,
-      className:'uc',
+      className:'uc gc-column',
       //style,
       //children, //appended at bottom
 
@@ -214,12 +214,12 @@ const content = {
   sectionWork:{
     sectionProps:{
       //head     :true,
-      className:'ph-u u2 pv-v v4',
-      id       :'education'
+      className:'ph-u u2 pv-v v4 gt-center',
+      id       :'work'
     },
     headingProps:{
       //id,
-      className:'uc',
+      className:'uc gc-column',
       //style,
       //children, //appended at bottom
 
@@ -251,7 +251,7 @@ const content = {
         title    :<FormattedMessage {...messages.workCardsMeccamicoTitle} />,
         subtitle :<FormattedMessage {...messages.workCardsMeccamicoSubtitle} />,
         id       :'work-mcm',
-        className:'y-background b-light-y ui-light',
+        className:'y-background b-light-y ui-light gc-wide',
         children :<>
           <p>
             <FormattedMessage {...messages.workCardsMeccamicoDescription} />
@@ -366,6 +366,7 @@ const Curriculum = ({
     //itemType="https://schema.org/FAQPage"
     HELMET={helmet}
   >
+    <NavBar/>
     <Page.Section
       {...content.sectionTitle.sectionProps}
     >
@@ -379,7 +380,8 @@ const Curriculum = ({
       <Heading {...content.sectionWork.headingProps} />
       <CurriculumComponent
         toggleStyle="plus"
-        className="s-1 k-s v8 mv-v"
+        className="s-1 k-s v8 mv-v gc-wide"
+        style={{height:"min-content"}}
       >
         { content.sectionWork.cardMap.map((e, i) =>
           (<CurriculumComponent.Item
@@ -395,7 +397,8 @@ const Curriculum = ({
     
       <Heading {...content.sectionEducation.headingProps} />
       <CurriculumComponent
-        className="s-1 k-s v8 mv-v"
+        className="s-1 k-s v8 mv-v gc-wide"
+        style={{height:"min-content"}}
       >
         { content.sectionEducation.cardMap.map((e, i) =>
           (<CurriculumComponent.Item

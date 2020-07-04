@@ -10,8 +10,8 @@
 $fontParagraphName:us;
 $fontDefault:$fontParagraphName, "HK Grotesk Pro", "Helvetica Neue", "Verdana", sans-serif;
 
-$fontPRegular:"paragraph";
-$fontPBold:"paragraph.bold";
+$fontPRegular:"alt/paragraph";
+$fontPBold:"alt/paragraph.bold";
 
 $fontHeadersName:chicago;
 $fontHeaders:$fontHeadersName, "Helvetica Neue", "Helvetica", "Verdana", "Arial", sans-serif;
@@ -48,8 +48,6 @@ $font-icon-filename:icon;
 @import "@fwrlines/alphabet-scss/scss/lib/styles";
 
 //@import "@fwrlines/alphabet-scss/scss/lib/colors";
-@import "@fwrlines/alphabet-scss/scss/lib/sizes";
-@import "@fwrlines/swatch"; //Same as "@fwrlines/swatch/main"
 
 #main {
   --heading-mul: var(--s2);
@@ -79,3 +77,15 @@ h5,
 .cairo.cairo.cairo {
   line-height: .6em;
 }
+
+html * {
+  cursor: url("/cursor.svg"), auto;
+}
+
+a,
+.pointer {
+  cursor: url("/pointer.svg"), pointer;
+}
+
+@import "@fwrlines/alphabet-scss/scss/lib/sizes";
+@import "@fwrlines/swatch"; //Same as "@fwrlines/swatch/main"

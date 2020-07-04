@@ -77,8 +77,8 @@ const App = () => {
         'z-background b-z'
       ].filter(e => e).join(' ')
     }
+      style={{'minHeight':'100%'}}
     >
-      <NavBar></NavBar>
       <SwitchRouteMap
         routes={routes}
         NotFound={<RedirectWithStatus

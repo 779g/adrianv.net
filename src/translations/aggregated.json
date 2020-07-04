@@ -1,5 +1,13 @@
 [
   {
+    "id": "app.articles.list.subtitle",
+    "defaultMessage": "Some thoughts about programming, tooling, and walk-through articles about programming ideas I wish I knew earlier."
+  },
+  {
+    "id": "app.articles.list.title",
+    "defaultMessage": "Articles and Tutorials"
+  },
+  {
     "id": "app.auth.pages.login.subtitle",
     "description": "Subtitle for the login page",
     "defaultMessage": "Login below to your dashboard account"
@@ -148,6 +156,61 @@
     "id": "app.site.oss.title",
     "description": "OSS Page title",
     "defaultMessage": "Open Source Software"
+  },
+  {
+    "id": "app.site.pages.contact.description",
+    "defaultMessage": "I look forward to your communication"
+  },
+  {
+    "id": "app.site.pages.contact.title",
+    "defaultMessage": "Contact"
+  },
+  {
+    "id": "app.site.pages.contact.title.title",
+    "defaultMessage": "Contact"
+  },
+  {
+    "id": "app.site.pages.credits.back",
+    "defaultMessage": "Back to the Homepage"
+  },
+  {
+    "id": "app.site.pages.credits.back_end",
+    "defaultMessage": "As for the back-end, this site is prerendered by a SSR lambda function hosted on { vercelLink } and static files are served from Vercel's CDN, all of this being toroughly cached."
+  },
+  {
+    "id": "app.site.pages.credits.description",
+    "defaultMessage": "The design of this website has been heavily influenced by { workLink } of { kareLink } for Apple in the 1980s."
+  },
+  {
+    "id": "app.site.pages.credits.fonts",
+    "defaultMessage": "The title font is { headingsLink } by Gilles Booth, an otf reboot of the original Chicago bitmap font by Kare. The paragraph font is Helvetica. I also used icons from the first versions of MacOs and the dingbat font { cairoLink }."
+  },
+  {
+    "id": "app.site.pages.credits.front_end",
+    "defaultMessage": "On the front-end side, I incorporated the components I developped in my { componentLink }. The site is themed with { swatchLink }."
+  },
+  {
+    "id": "app.site.pages.credits.go_to_source",
+    "defaultMessage": "Anyway, you can check all of this directly in the { sourceLink }."
+  },
+  {
+    "id": "app.site.pages.credits.here",
+    "defaultMessage": "here."
+  },
+  {
+    "id": "app.site.pages.credits.packaging",
+    "defaultMessage": "This universal React application is written in ESM and put together using Webpack and Babel. The source code is continuously integrated and deployed through git."
+  },
+  {
+    "id": "app.site.pages.credits.source",
+    "defaultMessage": "source code"
+  },
+  {
+    "id": "app.site.pages.credits.thanks",
+    "defaultMessage": "Thank you for your visit."
+  },
+  {
+    "id": "app.site.pages.credits.title"
   },
   {
     "id": "app.site.pages.curriculum.edu.cards.esade.i1"
@@ -541,9 +604,15 @@
     "defaultMessage": "/month"
   },
   {
+    "id": "ds.credits.title"
+  },
+  {
     "id": "ds.dashboard.navigation.horizontal_bar.back",
     "description": "Navigation back button",
     "defaultMessage": "Back"
+  },
+  {
+    "id": "ds.list.messages.title"
   },
   {
     "id": "ds.messages.title"

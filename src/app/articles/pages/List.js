@@ -5,15 +5,18 @@ import PropTypes from 'prop-types'
 
 import { Page, Heading } from '@fwrlines/ds'
 
+import { LocalBreadcrumb } from 'app/common/components'
+
+import URLS from '../urls'
 
 //Config
 //import C from 'ui/cssClasses'
 
 //Intl
 
-//import { FormattedMessage} from "react-intl";
+import { FormattedMessage} from "react-intl";
 //import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
-//import messages from "./messages";
+import messages from "./list.messages";
 // <FormattedMessage {...messages.title} />
 // <FormattedHTMLMessage {...messages.title} tagName='p'/>
 
@@ -39,26 +42,43 @@ const helmet = {
   */
 }
 
-const mainHeadingProps = {
-  //id,
-  className:'uc',
-  //style,
-  //children, //appended at bottom
+const content = {
+  sectionTitle:{
+    sectionProps:{
+      head     :true,
+      className:'ph-u u2 v4 pv-v gt-center',
+      id       :'head'
+    },
+    headingProps:{
+      //id,
+      className:'uc gc-column',
+      //style,
+      //children, //appended at bottom
 
-  heading  :'Resources',
-  //headingClassName:'ts-green',
-  headingAs:'h1',
-  //headingProps :{}
+      heading  :<FormattedMessage {...messages.title} />,
+      //headingClassName:'ts-green',
+      headingAs:'h1',
+      //headingProps :{}
 
-  label         :'Film',
-  labelClassName:'simple',
-  //labelAs:'p',
-  //labelProps :{},
-  //
-  subtitle      :'Stanley Kubrick, 1960'
-  //subtitleClassName,
-  //subtitleProps:{},
+      label:<LocalBreadcrumb>
+        <LocalBreadcrumb.Item
+          to={URLS.LIST}
+          position={2}
+        >
+          <FormattedMessage {...messages.title} />
+        </LocalBreadcrumb.Item>
+      </LocalBreadcrumb>,
+      labelClassName:'simple',
+      //labelAs:'p',
+      //labelProps :{},
+      //
+      subtitle:<FormattedMessage {...messages.subtitle} />
+      //subtitleClassName,
+      //subtitleProps:{},
 
+    }
+
+  },
 }
 
 /**
@@ -72,16 +92,14 @@ const ArticleList = ({
 }) => (
   <Page
     id={baseId}
-    itemType="https://schema.org/FAQPage"
+    //itemType="https://schema.org/FAQPage"
     HELMET={helmet}
   >
     <Page.Section
-      head
-      className="p-u u2"
-      id="head"
+      {...content.sectionTitle.sectionProps}
     >
     
-      <Heading {...mainHeadingProps} />
+      <Heading {...content.sectionTitle.headingProps} />
     </Page.Section>
     <Page.Section
       id="a1"

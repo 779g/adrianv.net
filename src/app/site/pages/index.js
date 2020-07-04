@@ -1,3 +1,5 @@
 export { default as Curriculum } from './Curriculum'
 export { default as Home } from './Home'
 export { default as OSS } from './OSS'
+export { default as Contact } from './Contact'
+export { default as Credits } from './Credits'

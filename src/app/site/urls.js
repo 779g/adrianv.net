@@ -12,5 +12,6 @@ export default {
   HOME      :'/',
   OSS       :'/oss',
   CURRICULUM:'/curriculum',
-  CONTACT   :'/contact'
+  CONTACT   :'/contact',
+  CREDITS   :'/credits'
 }

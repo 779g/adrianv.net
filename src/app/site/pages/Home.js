@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import { Page, Heading } from '@fwrlines/ds'
 
-import { LocalBreadcrumb } from 'app/common/components'
+import { NavBar, LocalBreadcrumb } from 'app/common/components'
 
 
 import URLS from '../urls'
@@ -98,6 +98,7 @@ const Home = ({
     itemType="https://schema.org/FAQPage"
     HELMET={helmet}
   >
+    <NavBar></NavBar>
     <Page.Section
       {...content.sectionTitle.sectionProps}
     >

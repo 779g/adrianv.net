@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import { Page, Heading, IconCard, IconList } from '@fwrlines/ds'
 
-import { LocalBreadcrumb } from 'app/common/components'
+import { NavBar, LocalBreadcrumb } from 'app/common/components'
 
 import URLS from '../urls'
 
@@ -139,12 +139,12 @@ const content = {
   sectionTitle:{
     sectionProps:{
       head     :true,
-      className:'ph-u u2 v4 pv-v',
+      className:'ph-u u2 v4 pv-v gt-center',
       id       :'head'
     },
     headingProps:{
       //id,
-      className:'uc',
+      className:'uc gc-column',
       //style,
       //children, //appended at bottom
 
@@ -176,12 +176,12 @@ const content = {
   sectionLibraries:{
     sectionProps:{
       head     :true,
-      className:'u2 pv-v v6',
+      className:'u2 pv-v v6 gt-center',
       id       :'head'
     },
     headingProps:{
       //id,
-      className:'uc ph-u',
+      className:'uc ph-u gc-column',
       //style,
       //children, //appended at bottom
 
@@ -244,12 +244,12 @@ const content = {
   sectionHelpers:{
     sectionProps:{
       head     :true,
-      className:'u2 pv-v v6',
+      className:'u2 pv-v v6 gt-center',
       id       :'head'
     },
     headingProps:{
       //id,
-      className:'uc ph-u',
+      className:'uc ph-u gc-column',
       //style,
       //children, //appended at bottom
 
@@ -355,6 +355,7 @@ const OSS = ({
     //itemType="https://schema.org/FAQPage"
     HELMET={helmet}
   >
+    <NavBar/>
     <Page.Section
       {...content.sectionTitle.sectionProps}
     >
@@ -365,7 +366,7 @@ const OSS = ({
       {...content.sectionLibraries.sectionProps}
     >
       <Heading {...content.sectionLibraries.headingProps} />
-      <div className="mv-v v4">
+      <div className="mv-v v4 gc-wide">
         <IconCard.Group
           style={{ '--card-width': '300px' }}
           className="pv-u"
@@ -385,7 +386,7 @@ const OSS = ({
       {...content.sectionHelpers.sectionProps}
     >
       <Heading {...content.sectionHelpers.headingProps} />
-      <div className="mv-v v4">
+      <div className="mv-v v4 gc-wide">
         <IconCard.Group
           style={{ '--card-width': '300px' }}
           className="pv-u"
