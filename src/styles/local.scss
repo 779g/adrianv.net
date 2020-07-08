@@ -52,6 +52,12 @@ $font-icon-filename:icon;
 #main {
   --heading-mul: var(--s2);
   font-size: calc(var(--s2) * 1em);
+  
+  //@media screen and (min-width: $from) and (max-width: 999px) {
+  @media screen and (max-width: 999px) {
+    font-size:calc(var(--s1) * 1em);
+  }
+
 }
 
 :root {

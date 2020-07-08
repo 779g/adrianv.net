@@ -94,7 +94,7 @@ const LocalCard = ({
         labelClassName  :labelClassName + ' s-3 k-s c-on-x b-dark-x',
         headingAs       :'h3',
         headingClassName:'small',
-        children        :<span  className="s-1 k-s c-light-x">{ linksReduced }</span>
+        children        :<span  className="s-1 k-s x-metadata c-light-x">{ linksReduced }</span>
 
       /*subtitle        :<a
         href="https://github.com/fwrlines/swatch"
@@ -139,7 +139,7 @@ const content = {
   sectionTitle:{
     sectionProps:{
       head     :true,
-      className:'ph-u u2 v4 pv-v gt-center',
+      className:'ph-u u2 v10 pv-v gt-center',
       id       :'head'
     },
     headingProps:{

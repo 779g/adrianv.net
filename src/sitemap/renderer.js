@@ -3,6 +3,7 @@ import template from './template.xml'
 import CONFIG from 'config'
 import * as U from 'app/urls'
 
+import articles from 'app/articles/content/articleMap'
 import { format } from 'date-fns'
 //import { request } from 'graphql-request'
 
@@ -36,13 +37,18 @@ The default priority of a page is 0.5.
 const STATIC_MAP = {
   HOME:{
     changefreq:'yearly',
-    priority  :.5,
-    lastmod   :new Date('2019-10-02')
+    priority  :1,
+    lastmod   :new Date('2020-07-05')
   },
-  ANOTHERPAGE:{
-    changefreq:'daily',
-    priority  :.5,
-    lastmod   :new Date('2019-09-12')
+  OSS:{
+    changefreq:'monthly',
+    priority  :0.7,
+    lastmod   :new Date('2020-07-05')
+  },
+  CURRICULUM:{
+    changefreq:'monthly',
+    priority  :0.7,
+    lastmod   :new Date('2019-07-05')
   }
 }
 
@@ -53,9 +59,9 @@ export default async (req, res) => {
   const paths = [
   ]
 
-  Object.keys(U.STATIC).forEach((key) => {
-    const { changefreq, priority, lastmod }= STATIC_MAP[key]
-    const loc = U.STATIC[key]
+  Object.keys(U.SITE).forEach((key) => {
+    const { changefreq, priority, lastmod }= STATIC_MAP[key] || {}
+    const loc = U.SITE[key]
     paths.push({
       loc,
       lastmod,
@@ -64,6 +70,18 @@ export default async (req, res) => {
     })
   })
 
+  articles.foreEach(article => {
+    const changefreq = 'montSly'
+    const priority = '0.5'
+    const lastmod = article.lastmod
+    const loc = article.slug
+    paths.push({
+      loc:`/${loc}`,
+      lastmod,
+      changefreq,
+      priority
+    })
+  })
 
   res.setHeader('Content-Type', 'text/xml')
 

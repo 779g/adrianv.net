@@ -1,9 +1,10 @@
 /* @fwrlines/generator-react-component 2.3.4 */
 import * as React from 'react'
-import { useContext, useMemo } from 'react'
+import { useMemo } from 'react'
 import PropTypes from 'prop-types'
 
-import { Button, SVG, SiteContext } from '@fwrlines/ds'
+
+import { ArticleCard } from './common'
 
 
 //Intl
@@ -17,73 +18,90 @@ import { Button, SVG, SiteContext } from '@fwrlines/ds'
 //import C from 'ui/cssClasses'
 
 //Relative imports
-//import styles from './theme_selector.scss'
-import { isBackend } from 'utils/isBackend'
+//import styles from './article_group.scss'
 
-if (!isBackend) {
-  import('./theme_selector.scss')
-}
+const baseClassName = 'article_group'
 
-const baseClassName = 'theme_selector'
+const getSeriesFromArticle = (article, c) => article.series.find(e =>  {
+  const eq = e[0] === c
+  return eq
+})
+
+const filterAndOrderBySeries = (articles, c) => articles.reduce((a,e) => {
+  if (e.series){
+    const find = getSeriesFromArticle(e,c)
+    find && a.push(e)
+  }
+  return a
+},
+[]
+).sort((a, b, c) => {
+  const ga = getSeriesFromArticle(a,c)
+  const gb = getSeriesFromArticle(b,c)
+  return a
+  //getSeriesFromArticle(a,c)[1] > getSeriesFromArticle(b,c)[1]
+})
 
 
 /**
- * Use `ThemeSelector` to
+ * Use `ArticleGroup` to
  * Has color `x`
  */
-const ThemeSelector = ({
+const ArticleGroup = ({
   id,
   className,
   style,
-
-  as:Wrapper,
-  ...otherProps
+  filterSeries,
+  grid,
+  mini,
+  articles
 }) => {
 
-  const {
-    preferredTheme,
-    setPreferredTheme
-  } = useContext(SiteContext)
+  const currentArticles = useMemo(() => {
+    let current = articles
+    if (filterSeries) {
+      current = filterAndOrderBySeries(current, filterSeries)
+    }
+    return current
 
-  const themes = ['light', 'dark', 'iceberg' ]
+  }
+    
+  ,
+  [articles, filterSeries]
 
-  const loopThemes = useMemo(() => () => {
-    const current = themes.indexOf(preferredTheme)
-    console.log('looping')
-    setPreferredTheme(themes[(current + 1) % themes.length])
-  },
-  [preferredTheme]
   )
-
+  
+  
   return (
-    <Wrapper
+    <ArticleCard.Group
+      grid={ grid }
       className={
         [
         //styles[baseClassName],
           baseClassName,
-          'pointer',
+          's-1 k-s pv-u',
           className
         ].filter(e => e).join(' ')
       }
       id={id}
       style={style}
-      { ...otherProps }
     >
-      <SVG
-        height={`${Math.pow(1.2, 3)}em`}
-        width={`${Math.pow(1.2, 3)}em`}
-        target="kare-bomb"
-        sprite="/dev.sprite.svg"
-        className="pointer x-link xh-red c-x"
-        useClassName='pointer'
-        onClick={loopThemes}
-      />
-      {/* preferredTheme */}
-    </Wrapper>
+      {
+        currentArticles.map((e, i) =>
+          (<ArticleCard
+            key={i}
+      mini={ mini }
+            selectedSeries={filterSeries}
+            {...e}
+          >
+          </ArticleCard>)
+        )
+      }
+    </ArticleCard.Group>
   )
 }
 
-ThemeSelector.propTypes = {
+ArticleGroup.propTypes = {
 
   /**
    * Provide an HTML id to this element
@@ -136,10 +154,9 @@ ThemeSelector.propTypes = {
   */
 }
 
-ThemeSelector.defaultProps = {
-    as:Button,
+ArticleGroup.defaultProps = {
+  articles:[]
   //height:'2.2em',
   //as:'p',
 }
-
-export default ThemeSelector
+export default ArticleGroup

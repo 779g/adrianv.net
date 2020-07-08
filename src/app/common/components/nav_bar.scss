@@ -7,21 +7,51 @@ Classes :
 
 */
 
+@use "@fwrlines/alphabet-scss/scss/mixins";
+@use "@fwrlines/alphabet-scss/scss/vars/responsive" as *;
+
+
 .nav_bar {
-  padding: .3em;
-  position: sticky;
-  top: 0;
-  transition: all .3s;
+  //padding: .3em;
+  //position: sticky;
+  //top: 0;
+  //transition: all .3s;
   z-index: 10; //even if 1 or 2 is enough
 
-  &:not(.istop) {
-    box-shadow: var(--shadow);
+  @include mixins.media($from:$sm-md) {
+    background:var(--light-y);
+    &:not(.istop) {
+      box-shadow: var(--shadow);
+    }
+
+
+  }
+
+  @include mixins.media($to:$sm-md) {
+    &:not(.open) {
+      .gc-header {
+       background:var(--link)!important;
+       .hamburger {
+        --x:var(--white);
+        --dark-x:var(--dark-white);
+
+       }
+      }
+
+    }
+  }
+
+  &.open {
+    .gc-footer {
+      justify-content:center;
+    }
+
   }
 
   ul {
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
 
     li.item {
@@ -29,10 +59,11 @@ Classes :
 
       & + li.item {
         &::before {
-          content: "\00a0~\00a0";
+          //content: "\00a0~\00a0";
+          content:' ';
           display: inline-block;
-          margin-left: 1em;
-          margin-right: 1em;
+          margin-left: .5em;
+          margin-right: 0em;
         }
       }
     }

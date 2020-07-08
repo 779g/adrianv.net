@@ -5,18 +5,22 @@ import PropTypes from 'prop-types'
 
 import { Page, Heading } from '@fwrlines/ds'
 
-import { LocalBreadcrumb } from 'app/common/components'
+import { NavBar,  LocalBreadcrumb } from 'app/common/components'
+import { ArticleGroup } from '../components'
+import allArticles from '../content/articleMap'
+import { Link } from 'react-router-dom'
 
 import URLS from '../urls'
+import { SITE as SITE_URLS } from 'app/urls'
 
 //Config
 //import C from 'ui/cssClasses'
 
 //Intl
 
-import { FormattedMessage} from "react-intl";
+import { FormattedMessage } from 'react-intl'
 //import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
-import messages from "./list.messages";
+import messages from './list.messages'
 // <FormattedMessage {...messages.title} />
 // <FormattedHTMLMessage {...messages.title} tagName='p'/>
 
@@ -42,11 +46,12 @@ const helmet = {
   */
 }
 
+
 const content = {
   sectionTitle:{
     sectionProps:{
       head     :true,
-      className:'ph-u u2 v4 pv-v gt-center',
+      className:'ph-u u2 v10 pv-v gt-center',
       id       :'head'
     },
     headingProps:{
@@ -72,13 +77,85 @@ const content = {
       //labelAs:'p',
       //labelProps :{},
       //
-      subtitle:<FormattedMessage {...messages.subtitle} />
+      subtitle      :<FormattedMessage {...messages.subtitle} />
       //subtitleClassName,
       //subtitleProps:{},
 
     }
 
   },
+  sectionAll:{
+    sectionProps:{
+      className:'v4 pv-v gt-center u2',
+      id       :'all'
+    },
+    headingProps:{
+      //id,
+      className:'uc gc-column ph-u',
+      //style,
+      //children, //appended at bottom
+
+      heading  :<FormattedMessage {...messages.allTitle} />,
+      //headingClassName:'ts-green',
+      headingAs:'h2',
+      //headingProps :{}
+
+      //label:'',
+      labelClassName:'simple',
+      //labelAs:'p',
+      //labelProps :{},
+      //
+      subtitle      :<FormattedMessage {...messages.allSubtitle} />
+      //subtitleClassName,
+      //subtitleProps:{},
+
+    },
+    articleGroup:{
+      articles:allArticles,
+      grid:true
+    }
+
+  },
+  sectionSb:{
+    sectionProps:{
+      className:'v4 pv-v gt-center u2',
+      id       :'storybook'
+    },
+    headingProps:{
+      //id,
+      className:'uc gc-column ph-u',
+      //style,
+      //children, //appended at bottom
+
+      heading  :<FormattedMessage {...messages.sbTitle} />,
+      //headingClassName:'ts-green',
+      headingAs:'h2',
+      //headingProps :{}
+
+      //label:'',
+      labelClassName:'simple',
+      //labelAs:'p',
+      //labelProps :{},
+      //
+      subtitle      :<FormattedMessage {...messages.sbSubtitle} />
+      //subtitleClassName,
+      //subtitleProps:{},
+
+    },
+    articleGroup:{
+      articles    :allArticles,
+      filterSeries:'Storybook'
+    }
+
+  },
+
+  sectionEnd:{
+    sectionProps:{
+      className:'ph-u u2 v4 pv-v gt-center',
+      id       :'end'
+    }
+
+  }
 }
 
 /**
@@ -95,6 +172,7 @@ const ArticleList = ({
     //itemType="https://schema.org/FAQPage"
     HELMET={helmet}
   >
+    <NavBar />
     <Page.Section
       {...content.sectionTitle.sectionProps}
     >
@@ -102,20 +180,51 @@ const ArticleList = ({
       <Heading {...content.sectionTitle.headingProps} />
     </Page.Section>
     <Page.Section
-      id="a1"
-      className="p-u u2"
+      {...content.sectionSb.sectionProps}
     >
-      <h2>Section A2</h2>
-      <p>Some content here. Blah blah</p>
     
+      <Heading {...content.sectionSb.headingProps} />
+      <div className="gc-wide mv-v">
+        <ArticleGroup
+          {...content.sectionSb.articleGroup}
+          style={{
+            '--card-width':'300px'
+          }}
+        />
+      </div>
     </Page.Section>
     <Page.Section
-      id="a2"
-      className="p-u u2"
+      {...content.sectionAll.sectionProps}
     >
-      <h2>Section A2</h2>
-      <p>Some content here. Blah blah</p>
     
+      <Heading {...content.sectionAll.headingProps} />
+      <div className="gc-wide mv-v">
+        <ArticleGroup
+          {...content.sectionAll.articleGroup}
+          style={{
+            '--card-width':'300px'
+          }}
+        />
+      </div>
+    </Page.Section>
+    <Page.Section
+      {...content.sectionEnd.sectionProps}
+    >
+      <p className="h4 gc-column uc mv-v">
+        <FormattedMessage {...messages.comingSoon} />
+      </p>
+      <p className="ks s1 gc-column uc mv-v x-subtitle c-x">
+        <FormattedMessage
+          {...messages.contact}
+          values={{
+            link:<Link to={SITE_URLS.CONTACT} >
+              <FormattedMessage {...messages.contactLink} />
+            </Link>
+          }}
+        />
+      </p>
+    
+
     </Page.Section>
   </Page>
 )

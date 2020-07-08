@@ -67,7 +67,7 @@ const content = {
   sectionTitle:{
     sectionProps:{
       head     :true,
-      className:'ph-u u2 v4 pv-v gt-center',
+      className:'ph-u u2 v10 pv-v gt-center',
       id       :'head'
     },
     headingProps:{
@@ -233,6 +233,7 @@ const content = {
       //labelAs:'p',
       //labelProps :{},
       //
+      /*
       subtitle:<>
         <FormattedMessage {...messages.workSubtitle} />
         <a
@@ -242,6 +243,7 @@ const content = {
           <FormattedMessage {...messages.workContact} />
         </a>
       </>
+      */
       //subtitleClassName,
       //subtitleProps:{},
 

@@ -158,5 +158,13 @@
   "app.site.pages.credits.packaging": "",
   "app.site.pages.credits.source": "",
   "app.site.pages.credits.thanks": "",
-  "app.site.pages.credits.back": ""
+  "app.site.pages.credits.back": "",
+  "app.articles.list.all.subtitle": "",
+  "app.articles.list.all.title": "",
+  "app.articles.list.storybook.subtitle": "",
+  "app.articles.list.storybook.title": "",
+  "app.articles.list.coming_soon": "",
+  "app.articles.list.contact": "",
+  "app.articles.list.contact.link": "",
+  "app.articles.article_group.read_more": ""
 }

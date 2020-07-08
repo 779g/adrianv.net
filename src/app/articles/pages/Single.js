@@ -1,19 +1,24 @@
 /* @fwrlines/generator-react-component 2.3.4 */
 import * as React from 'react'
-//import {} from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 
+
 import { Page, Heading } from '@fwrlines/ds'
+import URLS from '../urls'
 
 
+import { ArticleGroup } from 'app/articles/components'
+import { NavBar,  LocalBreadcrumb } from 'app/common/components'
 //Config
 //import C from 'ui/cssClasses'
 
 //Intl
 
-//import { FormattedMessage} from "react-intl";
-//import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
-//import messages from "./messages";
+import allArticles from '../content/articleMap'
+import { FormattedMessage} from "react-intl";
+import messages from "./single.messages";
+import articleListMessages from "./list.messages";
 // <FormattedMessage {...messages.title} />
 // <FormattedHTMLMessage {...messages.title} tagName='p'/>
 
@@ -70,7 +75,74 @@ const ArticleSingle = ({
   location,
   match
 }) => {
-  console.log(88, match)
+  const slug = match.params.slug
+
+  const article = useMemo(() => {
+    return allArticles.find(e => e.slug === slug) || {}
+  },
+    [slug]
+  )
+
+  const content = useMemo(() => ({
+    sectionTitle:{
+      sectionProps:{
+        head     :true,
+        className:'ph-u u2 v8 pv-v gt-center',
+        id       :'head'
+      },
+      headingProps:{
+      //id,
+        className:'gc-column',
+        //style,
+        //children, //appended at bottom
+
+        heading  :article.title,
+        headingClassName:'small',
+        headingAs:'h1',
+        //headingProps :{}
+
+        label:<LocalBreadcrumb>
+          <LocalBreadcrumb.Item
+            to={URLS.LIST}
+            position={2}
+          >
+            <FormattedMessage {...articleListMessages.title} />
+          </LocalBreadcrumb.Item>
+        </LocalBreadcrumb>,
+        labelClassName:'simple',
+        //labelAs:'p',
+        //labelProps :{},
+        //
+        subtitle      :article.description
+        //subtitleClassName,
+        //subtitleProps:{},
+
+      }
+
+    }
+  }), [slug])
+
+  //console.log(88, slug)
+  const [ArticleContent, setArticleContent] = useState(
+    () => (
+      () => <p>Loading...</p>
+    ))
+
+  useEffect(
+    () => {
+      const fetchResult = async () => await import(
+          /* webpackPreload:true */
+          `../content/${slug}.mdx`
+      ).then(Module => setArticleContent(() => {
+        return Module.default
+      })).catch(e => setArticleContent(() => () => 
+        <p className='x-error c-x'>{ e.message }</p>
+      ))
+      fetchResult()
+    }
+    , 
+    [slug])
+
 
   return (
     <Page
@@ -78,31 +150,80 @@ const ArticleSingle = ({
       itemType="https://schema.org/FAQPage"
       HELMET={helmet}
     >
-      <Page.Section
-        head
-        className="p-u u2"
-        id="head"
-      >
+      <NavBar />
+    <Page.Section
+      {...content.sectionTitle.sectionProps}
+    >
     
-        <Heading {...mainHeadingProps} />
-        <h1>{ match.params.slug }</h1>
-      </Page.Section>
+      { article.title ? <Heading {...content.sectionTitle.headingProps} /> :
+          <Heading 
+            className='ph-u g3'
+            label='Not found'
+            labelClassName='x-error'
+            headingAs='h1'
+            heading={ 
+              '404'
+            }
+            subtitle={
+              'The article you have requested does not exist. Instead, you might find the following articles interesting.'
+            }
+          />
+      }
+    </Page.Section>
+      { article.title ?
+          <>
       <Page.Section
         id="a1"
-        className="p-u u2"
+        className="p-u u2 gt-center"
+        as='main'
       >
-        <h2>Section A2</h2>
-        <p>Some content here. Blah blah</p>
+        <div className="content gc-column">
+          <ArticleContent/>
+          
+        </div>
     
       </Page.Section>
       <Page.Section
         id="a2"
+        className="u2"
+      >
+        { article.series.map(e => e[0]).map(
+          (e, i) => 
+            <div className='uc'>
+              <Heading
+                headingAs='h2'
+                headingClassName='small'
+                heading={
+                  <>More articles in the { e } series :</>
+                }
+              />
+        <ArticleGroup
+          articles={ allArticles }
+          mini
+          className='ul'
+          filterSeries={ e }
+          style={{
+            '--card-width':'300px'
+          }}
+        />
+              </div>
+        )}
+      </Page.Section>
+          </>:
+      <Page.Section
+        id="a2"
         className="p-u u2"
       >
-        <h2>Section A2</h2>
-        <p>Some content here. Blah blah</p>
-    
+        <ArticleGroup
+          articles={ allArticles }
+          className='ul'
+          style={{
+            '--card-width':'350px'
+          }}
+        />
       </Page.Section>
+
+      }
     </Page>
   )
 }

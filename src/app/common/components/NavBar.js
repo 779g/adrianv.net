@@ -1,7 +1,9 @@
 /* @fwrlines/generator-react-component 2.3.4 */
 import * as React from 'react'
-//import {} from 'react'
+import { useMemo } from 'react'
 import PropTypes from 'prop-types'
+
+import { Button, NavBar as BaseNavBar } from '@fwrlines/ds'
 
 import { Switch, Redirect, Route, Link } from 'react-router-dom'
 import { ThemeSelector, IconLink } from 'app/common/components'
@@ -22,26 +24,23 @@ const menuItems = [
   },
   */
   {
-    children:'resources',
-    to      :URLS.ARTICLES.LIST
-  },
-  {
-    children:'oss',
-    to      :URLS.SITE.OSS
-  },
-  {
-    children:'cv',
+    children:'Experience',
     to      :URLS.SITE.CURRICULUM
   },
   {
-    children:'testart',
-    to      :'/heyheyihey'
+    children:'Articles & Tutorials',
+    to      :URLS.ARTICLES.LIST
+  },
+  {
+    children:'OSS',
+    to      :URLS.SITE.OSS
   },
   {
     children:'NF',
     to      :'/ntfnd'
   }
 ]
+
 
 //Intl
 
@@ -76,53 +75,99 @@ const NavBar = ({
 
   const isTop = useIsTop()
 
-  return (
 
-    <HorizontalBar
+  const TitleComponent = useMemo(() => ({ open }) => (
+    <Link
+      to="/"
+      className="xs-h sm-h"
+    >
+      <Button
+      //simple
+        className="x-link fi-cairo fi s5 k-s"
+        style={{ padding: '.3em', height: 'min-content', fontWeight: 'normal', lineHeight: '.8em' }}
+        simple
+      >
+1
+      </Button>
+    </Link>
+
+
+  ), [])
+
+  const FooterComponent = useMemo(() => ({ open }) => (
+    <Button.Group className={`${open && ''} gc-footer u0`}>
+      <Link
+        to={URLS.SITE.CONTACT}
+        className={!open && 'xs-h sm-h'}
+      >
+        <Button
+          className="x-link fi-cairo fi s6 k-s"
+          simple
+          style={{ padding: '0 0 0 .3em', height: 'min-content', fontWeight: 'normal', lineHeight: '.8em', top: '-.12em' }}
+        >
+        S
+        </Button>
+      </Link>
+      <Link
+        to={URLS.SITE.CREDITS}
+        className={!open && 'xs-h sm-h'}
+      >
+        <Button
+          className="x-link fi-cairo fi s6 k-s"
+          simple
+          style={{ padding: '0 0 0 .3em', height: 'min-content', fontWeight: 'normal', lineHeight: '.8em', top: '-.07em' }}
+
+        >
+        O
+        </Button>
+      </Link>
+      <ThemeSelector
+        simple
+        className="s1 k-s"
+        style={{ padding: '0 .4em 0 .6em' }}
+      />
+    </Button.Group>
+
+
+  ), [])
+
+  return (
+    <BaseNavBar
       className={
         [
-        //styles[baseClassName],
+          //styles[baseClassName],
           baseClassName,
-          'yf s1 k-s',
-          isTop ? 'istop y-transparent' : 'y-background',
-          'b-light-y',
           className
         ].filter(e => e).join(' ')
       }
+      openClassName="y-background b-dark-y"
+      closedClassName={
+        [
+          isTop ? 'istop y-transparent' : 'y-background'
+        ].filter(e => e).join(' ')
+
+      }
       id={id}
       style={style}
+      headerClassName="x-paragraph"
+      headerOpenClassName="x-link"
+      headerClosedClassName="b-light-y"
+      contentOpenClassName="s4 k-s"
+      contentClosedClassName="s1 k-s"
+      FooterComponent={FooterComponent}
+      TitleComponent={TitleComponent}
     >
-      <ul
-        className="compact yf v0 m-v"
-      >
-        <li>
-          <IconLink to="/" >
-      1
-          </IconLink>
-        </li>
-        { menuItems.map((e, i) =>
-          (<li className="item">
-            <Link
-              {...e}
-              key={i}
-            />
-          </li>)
-        ) }
-        <li>
-          <IconLink to={ URLS.SITE.CONTACT }>
-      S
-          </IconLink>
-        </li>
-        <li>
-          <IconLink to={ URLS.SITE.CREDITS } >
-      O
-          </IconLink>
-        </li>
-        <li>
-          <ThemeSelector />
-        </li>
-      </ul>
-    </HorizontalBar>
+      { menuItems.map(({ to, ...props }, i) =>
+        (
+          <BaseNavBar.Item
+            link={to}
+            {...props}
+            key={i}
+          />
+        )
+      ) }
+    </BaseNavBar>
+
   )
 }
 
