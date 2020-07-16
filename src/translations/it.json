@@ -167,5 +167,6 @@
   "app.articles.list.contact": "",
   "app.articles.list.contact.link": "",
   "app.articles.article_group.read_more": "",
-  "ds.collections.blog.article_card.cta": ""
+  "ds.collections.blog.article_card.cta": "",
+  "ds.collections.saas.plan.features": ""
 }

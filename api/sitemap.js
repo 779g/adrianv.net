@@ -230,7 +230,7 @@ return"./src/app/site/pages/Home.js"}}),exact:!0}];t.default=o},"./src/app/site/
 /*!******************************!*\
   !*** ./src/utils/urljoin.js ***!
   \******************************/
-/*! no static exports found */function(e,t,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var s=function(...e){let t,a;return a="*"!=e[-1]||e[-1].endsWith("/")?"/":"",t=e[0].startsWith("http")||e[0].startsWith("/")?"":"/",t+e.join("/")+a};t.default=s},0:
+/*! no static exports found */function(e,t,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var s=function(...e){return e.filter(e=>e).reduce((t,a,s)=>{let r=a;return a.startsWith("/")&&s>0&&(r=a.substring(1)),a.endsWith("/")&&s<e.length-1&&(r=a.substring(0,a.length-1)),t.push(r),t},[]).join("/")};t.default=s},0:
 /*!***************************************!*\
   !*** multi ./src/sitemap/renderer.js ***!
   \***************************************/
