@@ -166,5 +166,6 @@
   "app.articles.list.coming_soon": "More content coming soon...",
   "app.articles.list.contact": "If you have ideas or comments about the content, topics you'd like me to write about, { link }.",
   "app.articles.list.contact.link": "feel free to drop me a line",
-  "app.articles.article_group.read_more": "Read more"
+  "app.articles.article_group.read_more": "Read more",
+  "ds.collections.blog.article_card.cta": "Read more"
 }

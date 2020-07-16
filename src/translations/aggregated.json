@@ -566,6 +566,11 @@
     "defaultMessage": "A template for a GraphQL / universal React application, to be deployed on Vercel, or be used as an example to build lambda-based infrastructure."
   },
   {
+    "id": "ds.collections.blog.article_card.cta",
+    "description": "The CTA at the bottom of the article cards",
+    "defaultMessage": "Read more"
+  },
+  {
     "id": "ds.collections.cp.status_bar.connected",
     "description": "Text if the endpoint is connected",
     "defaultMessage": "Connected to the GraphQL endpoint at { endpoint }."
